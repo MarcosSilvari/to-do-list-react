@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0d0b14;
+    color: #eee;
+    overflow-x: hidden;
+
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(160, 32, 240, 0.25), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(225, 78, 255, 0.2), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(80, 6, 87, 0.4), transparent 50%),
+        linear-gradient(180deg, #0a0316 0%, #14071a 50%, #0a0316 100%);
+}
+
+/* ===== Camada de estrelas (pontinhos brilhantes) ===== */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image:
+        radial-gradient(2px 2px at 10% 15%, #ffffff 100%, transparent 0),
+        radial-gradient(1.5px 1.5px at 30% 40%, #e14eff 100%, transparent 0),
+        radial-gradient(2px 2px at 50% 10%, #ffffff 100%, transparent 0),
+        radial-gradient(1px 1px at 70% 60%, #ffffff 100%, transparent 0),
+        radial-gradient(2px 2px at 85% 25%, #e14eff 100%, transparent 0),
+        radial-gradient(1.5px 1.5px at 15% 70%, #ffffff 100%, transparent 0),
+        radial-gradient(1px 1px at 40% 85%, #ffffff 100%, transparent 0),
+        radial-gradient(2px 2px at 60% 50%, #ffffff 100%, transparent 0),
+        radial-gradient(1.5px 1.5px at 90% 75%, #e14eff 100%, transparent 0),
+        radial-gradient(1px 1px at 25% 90%, #ffffff 100%, transparent 0),
+        radial-gradient(2px 2px at 95% 45%, #ffffff 100%, transparent 0),
+        radial-gradient(1.5px 1.5px at 5% 50%, #ffffff 100%, transparent 0);
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    animation: piscar 4s ease-in-out infinite alternate;
+    opacity: 0.8;
+}
+
+@keyframes piscar {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0316;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a020f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e14eff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.app {
+  
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #16161f;
+  border: 1px solid #a855f7;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.app:hover {
+  box-shadow: 0 0 18px #a855f7;
+}
+
+.app h1 {
+  margin-bottom: 20px;
+  text-shadow: 0 0 18px #a855f7;
+}
+
+.formulario {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.campo {
+  flex: 1;
+  padding: 10px;
+  background: #0d0d14;
+  color: white;
+  border: 1px solid #a855f7;
+  border-radius: 10px;
+  outline: none;
+}
+
+.campo:focus {
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.botao-add,
+.botao-remover {
+  padding: 10px 14px;
+  background: transparent;
+  color: white;
+  border: 1px solid #a855f7;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.botao-add:hover,
+.botao-remover:hover {
+  background: #a855f7;
+  transform: scale(1.06);
+  box-shadow: 0 0 18px #a855f7;
+}
+
+.lista {
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  background: #0d0d14;
+  border: 1px solid #3b2a5a;
+  border-radius: 10px;
+}
